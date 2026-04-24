@@ -2,12 +2,13 @@
   "primary": "monoxide.dev",
   "mirrors": [
     { "url": "https://monoxide.dev", "label": "Origin" },
+    { "url": "https://monoxide-hub.pages.dev", "label": "CF mirror" },
     { "url": "https://monoxide.b-cdn.net", "label": "BCDN mirror" }
   ],
   "discord": null,
   "message": null,
   "cloak": {
-    "title": "Cedarwood Student Portal",
+    "title": "Google Docs",
     "favicon": "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico"
   },
   "updated": "2026-04-24"
