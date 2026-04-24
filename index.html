@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Cedarwood City School District student portal. Access lessons, resources, and learning tools.">
+<meta name="keywords" content="cedarwood, school, district, student, portal, lessons, education, k-12, learning">
+<title>Cedarwood Student Portal</title>
+<link rel="icon" href="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico">
+<link rel="apple-touch-icon" href="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Open Sans',Roboto,sans-serif;background:#fff;color:#1a1a1a;line-height:1.6;font-size:15px;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.ab{background:#c8960c;color:#fff;text-align:center;padding:.5rem 1rem;font-size:.8rem;font-weight:600;letter-spacing:.02em}
+.ub{background:#0c2340;padding:.35rem 2rem;display:flex;justify-content:flex-end;align-items:center;gap:1.5rem}
+.ub a{color:#b0c0d4;font-size:.75rem;font-weight:500;letter-spacing:.03em;transition:color .15s}
+.ub a:hover{color:#fff}
+header{background:#fff;border-bottom:3px solid #c8960c;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:80px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.lw{display:flex;align-items:center;gap:14px}
+.ls{width:58px;height:58px;flex-shrink:0;background:#0c2340;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#c8960c;font-size:22px;font-weight:900;letter-spacing:-1px}
+.lt{line-height:1.2}
+.lt .d{font-size:1.15rem;font-weight:800;color:#0c2340;letter-spacing:-.01em}
+.lt .s{font-size:.68rem;color:#5a7a9a;text-transform:uppercase;letter-spacing:.12em;font-weight:500}
+nav{display:flex;align-items:center;gap:0;height:100%}
+.ni>a{display:flex;align-items:center;height:100%;padding:0 1.1rem;font-size:.82rem;font-weight:700;color:#1a2a3a;text-transform:uppercase;letter-spacing:.04em;transition:color .15s;cursor:pointer}
+.ni>a:hover{color:#c8960c}
+main{max-width:1200px;margin:0 auto;padding:3rem 2rem}
+.hero{background:linear-gradient(135deg,#0c2340 0%,#1a3a5c 100%);color:#fff;padding:4rem 3rem;border-radius:8px;margin-bottom:3rem;text-align:center}
+.hero h1{font-size:2.5rem;font-weight:800;margin-bottom:1rem;letter-spacing:-.02em}
+.hero p{font-size:1.1rem;color:#b0c0d4;max-width:680px;margin:0 auto 2rem}
+.btn{display:inline-block;background:#c8960c;color:#fff;padding:.9rem 2rem;border-radius:4px;font-size:.9rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;transition:background .15s;cursor:pointer;border:none}
+.btn:hover{background:#b07f08}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:3rem}
+.card{background:#fff;border:1px solid #e0e0e0;border-radius:6px;padding:1.8rem;box-shadow:0 1px 3px rgba(0,0,0,.05);transition:box-shadow .2s,transform .15s;cursor:pointer}
+.card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px)}
+.card h3{font-size:1.05rem;font-weight:700;color:#0c2340;margin-bottom:.5rem}
+.card p{color:#666;font-size:.88rem}
+footer{background:#0c2340;color:#b0c0d4;padding:3rem 2rem 2rem;margin-top:4rem}
+.fw{max-width:1200px;margin:0 auto}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;margin-bottom:2rem}
+.fg h4{color:#c8960c;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem}
+.fg a{display:block;font-size:.82rem;padding:.25rem 0;color:#b0c0d4}
+.fg a:hover{color:#fff}
+.fb{border-top:1px solid #1a3a5c;padding-top:1.5rem;font-size:.75rem;color:#6a8aa0;text-align:center}
+.bd{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:1000;padding:2rem}
+.bd.on{display:flex}
+.bd .inner{background:#111;border:1px solid #333;border-radius:8px;max-width:460px;width:100%;padding:28px;color:#eee;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.bd h2{font-size:1.4rem;margin-bottom:.5rem;color:#fff;font-weight:700;letter-spacing:-.01em}
+.bd .sub{color:#888;font-size:.82rem;margin-bottom:1.5rem}
+.bd .ml{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:4px;overflow:hidden;margin-bottom:1rem}
+.bd .mi{padding:.7rem .9rem;border-bottom:1px solid #222;display:flex;align-items:center;justify-content:space-between;font-size:.78rem;cursor:pointer;transition:background .1s}
+.bd .mi:last-child{border-bottom:none}
+.bd .mi:hover{background:#222}
+.bd .mi .u{color:#8ec7ff;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bd .mi .st{font-size:.62rem;margin-left:.8rem;padding:.15rem .45rem;border-radius:2px;font-weight:700;letter-spacing:.04em}
+.bd .mi .st.ok{background:#1a3a1f;color:#4caf50}
+.bd .mi .st.chk{background:#1a2538;color:#8ec7ff}
+.bd .mi .st.dn{background:#3a1a1a;color:#e57373}
+.bd .actions{display:flex;gap:.5rem;margin-top:1rem}
+.bd .actions button{flex:1;background:#2a2a2a;border:1px solid #333;color:#ccc;padding:.55rem;border-radius:4px;font-size:.75rem;cursor:pointer;transition:background .1s}
+.bd .actions button:hover{background:#333}
+.bd .actions .p{background:#c8960c;color:#fff;border-color:#c8960c;font-weight:700}
+.bd .actions .p:hover{background:#b07f08}
+.bd .msg{background:#1a2538;border-left:3px solid #8ec7ff;padding:.7rem .9rem;margin-bottom:1rem;font-size:.78rem;color:#bcd}
+</style>
+</head>
+<body>
+<div class="ab">SPRING BREAK: Schools closed April 14-18. <a href="#">See updated calendar</a></div>
+<div class="ub">
+<a href="#">Staff Directory</a>
+<span style="color:#2e4a6a">|</span>
+<a href="#">Board of Ed</a>
+<span style="color:#2e4a6a">|</span>
+<a href="#">Careers</a>
+<span style="color:#2e4a6a">|</span>
+<a href="#" style="background:#c8960c;color:#fff;padding:.3rem .8rem;border-radius:3px;font-size:.72rem;font-weight:700;letter-spacing:.04em">PARENT PORTAL</a>
+</div>
+<header>
+<div class="lw">
+<div class="ls">C</div>
+<div class="lt">
+<div class="d">Cedarwood City School District</div>
+<div class="s">Where Every Student Succeeds</div>
+</div>
+</div>
+<nav>
+<div class="ni"><a>About</a></div>
+<div class="ni"><a>Schools</a></div>
+<div class="ni"><a>Academics</a></div>
+<div class="ni"><a>Students</a></div>
+<div class="ni"><a>Parents</a></div>
+<div class="ni"><a id="launchBtn">Student Portal</a></div>
+</nav>
+</header>
+<main>
+<div class="hero">
+<h1>Welcome to Cedarwood Student Resources</h1>
+<p>Access your assignments, classroom materials, and learning platforms from one central location. Serving over 4,200 students across four schools in Cedarwood, Ohio since 1952.</p>
+<button class="btn" id="launchBtn2">Enter Student Portal</button>
+</div>
+<div class="grid">
+<div class="card"><h3>Classroom Hub</h3><p>Access Google Classroom, assignments, and course materials for all grade levels.</p></div>
+<div class="card"><h3>Library Resources</h3><p>Research databases, e-books, and citation guides for student research projects.</p></div>
+<div class="card"><h3>Learning Platforms</h3><p>Connect to Khan Academy, IXL, Desmos, and district-approved learning tools.</p></div>
+<div class="card"><h3>Grade Reports</h3><p>View current grades, attendance records, and academic progress reports.</p></div>
+<div class="card"><h3>Calendar</h3><p>School calendar, events, early dismissals, and important academic dates.</p></div>
+<div class="card"><h3>Contact Staff</h3><p>Directory of teachers, counselors, and administrative staff contact information.</p></div>
+</div>
+</main>
+<footer>
+<div class="fw">
+<div class="fg">
+<div><h4>Schools</h4><a>Cedarwood High</a><a>Pioneer Middle</a><a>Lincoln Elementary</a><a>Franklin Elementary</a></div>
+<div><h4>Students</h4><a>Classroom</a><a>Library</a><a>Lunch Menu</a><a>Activities</a></div>
+<div><h4>Parents</h4><a>Portal</a><a>Calendar</a><a>Transportation</a><a>Volunteer</a></div>
+<div><h4>District</h4><a>Board of Ed</a><a>Careers</a><a>Policies</a><a>Contact</a></div>
+</div>
+<div class="fb">&copy; 2026 Cedarwood City School District &middot; 1400 Main Street, Cedarwood, OH 44001 &middot; (440) 555-0100</div>
+</div>
+</footer>
+
+<div class="bd" id="drawer">
+<div class="inner">
+<h2 id="dtitle">Choose mirror</h2>
+<div class="sub" id="dsub">Probing for a live connection...</div>
+<div class="msg" id="dmsg" style="display:none"></div>
+<div class="ml" id="mlist"></div>
+<div class="actions">
+<button id="btnFastest">Launch Fastest</button>
+<button class="p" id="btnCloak">Launch Cloaked</button>
+</div>
+<div class="sub" style="margin-top:1rem;font-size:.7rem;text-align:center">
+<a id="btnRefresh" style="color:#888;cursor:pointer">Refresh list</a>
+&middot;
+<a id="btnDiscord" target="_blank" style="color:#888;cursor:pointer">Discord</a>
+&middot;
+<a id="btnClose" style="color:#888;cursor:pointer">Close</a>
+</div>
+</div>
+</div>
+
+<script>
+(function(){
+"use strict";
+var DEFAULT_CFG = {
+  primary: "monoxide.dev",
+  mirrors: [
+    { url: "https://monoxide.dev", label: "Origin" },
+    { url: "https://monoxide.b-cdn.net", label: "BCDN mirror" }
+  ],
+  discord: null,
+  message: null,
+  cloak: { title: "Cedarwood Student Portal", favicon: "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico" }
+};
+var CFG_SOURCES = [
+  "./config.json",
+  "https://cdn.jsdelivr.net/gh/LifeNock/student-resources@main/config.json",
+  "https://raw.githubusercontent.com/LifeNock/student-resources/main/config.json"
+];
+var PROBE_TIMEOUT = 3500;
+var cfg = DEFAULT_CFG;
+var mirrorStates = {};
+var fastest = null;
+
+function qs(s){return document.querySelector(s)}
+function ce(t,c){var e=document.createElement(t);if(c)e.className=c;return e}
+
+function loadConfig(){
+  var tries = CFG_SOURCES.slice();
+  function next(){
+    if(!tries.length){render();probe();return}
+    var u = tries.shift() + "?t=" + Date.now();
+    var ac = new AbortController();
+    var to = setTimeout(function(){ac.abort()}, 4000);
+    fetch(u, { signal: ac.signal, cache: "no-store" })
+      .then(function(r){clearTimeout(to);if(!r.ok)throw 0;return r.json()})
+      .then(function(j){
+        if(j && j.mirrors && j.mirrors.length){
+          cfg = Object.assign({}, DEFAULT_CFG, j);
+          if(!cfg.cloak) cfg.cloak = DEFAULT_CFG.cloak;
+        }
+        render();probe();
+      })
+      .catch(function(){clearTimeout(to);next()});
+  }
+  next();
+}
+
+function render(){
+  var list = qs("#mlist");
+  list.innerHTML = "";
+  cfg.mirrors.forEach(function(m, i){
+    var row = ce("div","mi");
+    row.dataset.idx = i;
+    var u = ce("div","u");
+    u.textContent = m.label ? m.label + "  —  " + m.url.replace(/^https?:\/\//,'') : m.url.replace(/^https?:\/\//,'');
+    var st = ce("div","st chk");
+    st.textContent = "PROBING";
+    row.appendChild(u);
+    row.appendChild(st);
+    row.onclick = function(){ launch(m.url, true) };
+    list.appendChild(row);
+    mirrorStates[i] = { el: row, st: st, m: m };
+  });
+  if(cfg.discord){
+    qs("#btnDiscord").href = cfg.discord;
+  } else {
+    qs("#btnDiscord").style.display = "none";
+  }
+  if(cfg.message){
+    var d = qs("#dmsg");
+    d.textContent = cfg.message;
+    d.style.display = "block";
+  }
+  if(cfg.cloak){
+    document.title = cfg.cloak.title || document.title;
+    if(cfg.cloak.favicon){
+      var lk = document.querySelector("link[rel='icon']");
+      if(lk) lk.href = cfg.cloak.favicon;
+    }
+  }
+}
+
+function probeOne(idx){
+  var s = mirrorStates[idx];
+  if(!s) return;
+  var url = s.m.url.replace(/\/$/, "") + "/api/health?t=" + Date.now();
+  var start = performance.now();
+  var ac = new AbortController();
+  var to = setTimeout(function(){ac.abort()}, PROBE_TIMEOUT);
+  fetch(url, { signal: ac.signal, mode: "no-cors", cache: "no-store", credentials: "omit" })
+    .then(function(){
+      clearTimeout(to);
+      var ms = Math.round(performance.now() - start);
+      s.st.textContent = ms + "MS";
+      s.st.className = "st ok";
+      s.el.dataset.ms = ms;
+      if(!fastest || ms < fastest.ms){ fastest = { idx: idx, ms: ms, url: s.m.url } }
+      qs("#dsub").textContent = fastest ? ("Fastest: " + fastest.url.replace(/^https?:\/\//,'') + " (" + fastest.ms + "ms)") : "Probing...";
+    })
+    .catch(function(){
+      clearTimeout(to);
+      s.st.textContent = "DOWN";
+      s.st.className = "st dn";
+    });
+}
+
+function probe(){
+  fastest = null;
+  qs("#dsub").textContent = "Probing for a live connection...";
+  Object.keys(mirrorStates).forEach(function(i){
+    mirrorStates[i].st.textContent = "PROBING";
+    mirrorStates[i].st.className = "st chk";
+    probeOne(Number(i));
+  });
+}
+
+function launch(url, cloaked){
+  if(!url) return;
+  var target = url;
+  var title = (cfg.cloak && cfg.cloak.title) || "Google Docs";
+  var fav = (cfg.cloak && cfg.cloak.favicon) || "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico";
+  if(cloaked){
+    var html = '<!DOCTYPE html><html><head><title>'+title+'<\/title>' +
+      '<link rel="icon" href="'+fav+'">' +
+      '<style>*{margin:0;padding:0}body{overflow:hidden}iframe{width:100vw;height:100vh;border:none}<\/style>' +
+      '<\/head><body><iframe src="'+target+'" allow="autoplay;fullscreen;gamepad;accelerometer;gyroscope;clipboard-read;clipboard-write" allowfullscreen><\/iframe><\/body><\/html>';
+    var w = window.open("about:blank", "_blank");
+    if(w){
+      w.document.open();
+      w.document.write(html);
+      w.document.close();
+      try { window.location.replace("https://classroom.google.com") } catch(e){}
+      return;
+    }
+  }
+  window.location.href = target;
+}
+
+function openDrawer(){
+  qs("#drawer").classList.add("on");
+  if(!Object.keys(mirrorStates).length) loadConfig();
+}
+function closeDrawer(){ qs("#drawer").classList.remove("on") }
+
+document.addEventListener("DOMContentLoaded", function(){
+  qs("#launchBtn").onclick = openDrawer;
+  qs("#launchBtn2").onclick = openDrawer;
+  qs("#btnClose").onclick = closeDrawer;
+  qs("#btnRefresh").onclick = probe;
+  qs("#btnCloak").onclick = function(){
+    if(fastest) launch(cfg.mirrors[fastest.idx].url, true);
+    else if(cfg.mirrors.length) launch(cfg.mirrors[0].url, true);
+  };
+  qs("#btnFastest").onclick = function(){
+    if(fastest) launch(cfg.mirrors[fastest.idx].url, false);
+    else if(cfg.mirrors.length) launch(cfg.mirrors[0].url, false);
+  };
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape") closeDrawer();
+    if(e.key === "." && e.ctrlKey && e.shiftKey){ e.preventDefault(); openDrawer() }
+  });
+  if(location.hash === "#launch" || location.search.indexOf("go=1") !== -1){
+    loadConfig();
+    setTimeout(function(){
+      if(fastest) launch(cfg.mirrors[fastest.idx].url, true);
+      else if(cfg.mirrors.length) launch(cfg.mirrors[0].url, true);
+    }, 1200);
+  }
+});
+
+loadConfig();
+})();
+</script>
+</body>
+</html>
